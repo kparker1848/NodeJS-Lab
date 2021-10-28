@@ -1,11 +1,11 @@
 const path = require('path');
 const fs = require('fs');
-const request = require('request');
+const rp = require('request-promise');
 
 
 let dataPath = path.join(__dirname, '/popular-articles.json');
 
-request("https://reddit.com/r/popular.json", (err, res, body) => {
+rp("https://reddit.com/r/popular.json", (err, res, body) => {
 
     if (err) console.log(err);
     
